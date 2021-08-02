@@ -1,0 +1,18 @@
+<div class="list__controll">
+  <input type="text" id="item-input" #newItem name="newItem">
+  <button (click)="addItem({content: newItem.value, isDone: false}); newItem.value = ''">
+    ADD
+  </button>
+</div>
+
+<ul>
+  <li *ngFor="let item of items">
+    <div class="item" [ngClass]="{'doneItem': item.isDone}">
+      <p>{{item.content}}</p>
+      <div class="list__buttons">
+        <button (click)="setItemDone(item)">Done</button>
+        <button (click)="removeItem(item)">Remove</button>
+      </div>
+    </div>
+  </li>
+</ul>
