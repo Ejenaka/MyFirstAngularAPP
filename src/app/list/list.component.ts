@@ -10,8 +10,6 @@ export class ListComponent {
 
   items: Item[] = [];
 
-  //@ViewChild() input: ElementRef;
-
   getItems() {
     return this.items;
   }
@@ -28,11 +26,9 @@ export class ListComponent {
   setItemDone(item: Item) {
     const foundItem = this.items.find(i => i == item);
     foundItem!.isDone = true;
-    console.log(foundItem!.content); 
   }
 
   clearInput(input: HTMLInputElement) {
-    console.log('fun');
     input.value = '';
   }
 }
